@@ -176,9 +176,33 @@ function App() {
             </button>
           </div>
         </header>
+       {/* Key Features Section */}
+        <section className="py-24 bg-white text-zinc-900">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-semibold mb-4">Why Farmers Trust Us</h2>
+              <p className="text-xl text-gray-600">Powerful insights from real agricultural parameters</p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-10">
+              {[
+                { icon: "🌱", title: "Crop Growth Simulation", desc: "Accurate growth stage prediction" },
+                { icon: "☔", title: "Rainfall Analysis", desc: "Impact of rainfall on your yield" },
+                { icon: "🪴", title: "Soil & Fertilizer", desc: "Best recommendations for your field" }
+              ].map((item, i) => (
+                <div key={i} className="text-center p-10 bg-zinc-50 rounded-3xl hover:shadow-xl transition">
+                  <div className="text-6xl mb-6">{item.icon}</div>
+                  <h3 className="text-2xl font-semibold mb-3">{item.title}</h3>
+                  <p className="text-gray-600">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       </div>
     );
   }
+
 
   // ====================== LOGIN / REGISTER ======================
   if (currentPage === 'login') {
